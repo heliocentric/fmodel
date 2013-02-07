@@ -9,5 +9,10 @@ package com.github.heliocentric.fmodel;
  * @author Helio
  */
 public class Model {
-	
+	public Model() {
+	}
+	public static Model Load() {
+		Model model = new Model();
+		return model;
+	}
 }
