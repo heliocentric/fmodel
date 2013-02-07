@@ -28,4 +28,6 @@ public class Currency {
 	public void setDescription(String Description) {
 		this._description = Description;
 	}
+	BigDecimal Total;
+	BigDecimal Unclaimed;
 }
