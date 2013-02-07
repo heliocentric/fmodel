@@ -11,5 +11,6 @@ import java.math.BigDecimal;
  * @author Helio
  */
 public class Currency {
-	
+	BigDecimal Total;
+	BigDecimal Unclaimed;
 }
