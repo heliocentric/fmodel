@@ -15,6 +15,11 @@ public class Model {
 		Model model = new Model();
 		return model;
 	}
+	public void Prep() {
+		
+	}
+	public void AddCurrency(Currency currency) {
+	}
 	public void Close() {
 		
 	}
