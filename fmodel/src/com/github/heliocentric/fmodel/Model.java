@@ -11,8 +11,11 @@ package com.github.heliocentric.fmodel;
 public class Model {
 	public Model() {
 	}
-	public static Model Load() {
+	public static Model Open() {
 		Model model = new Model();
 		return model;
+	}
+	public void Close() {
+		
 	}
 }
