@@ -16,5 +16,6 @@ public class Viewer {
 	public static void main(String[] args) {
 		// TODO code application logic here
 		Model main = new Model();
+		main.AddCurrency(new Currency("USD", "US Dollar"));
 	}
 }
