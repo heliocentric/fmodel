@@ -8,6 +8,12 @@ package com.github.heliocentric.fmodel;
  *
  * @author helio
  */
-public class Entity extends Object {
-	
+public class Object {
+	private String _uuid;
+	public String getUUID() {
+		return this._uuid;
+	}
+	public void setUUID(String uuid) {
+		this._uuid = uuid;
+	}
 }
