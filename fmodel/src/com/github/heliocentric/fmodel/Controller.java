@@ -8,6 +8,6 @@ package com.github.heliocentric.fmodel;
  *
  * @author helio
  */
-public class Corporation extends Entity {
+public class Controller {
 	
 }
