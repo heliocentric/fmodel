@@ -13,7 +13,7 @@ import com.github.heliocentric.fmodel.ModelClasses.World;
 public class Model {
 	public World World;
 	public Model(Controller control, View view) throws Exception {
-		this.World = new World("test");
+		this.World = new World(control,view,"test");
 		
 	}
 	public void Start() throws Exception {

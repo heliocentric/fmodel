@@ -15,7 +15,12 @@ public class CommandView extends View {
 
 	@Override
 	public void Enqueue(ViewMessage message) {
-		throw new UnsupportedOperationException("Not supported yet.");
+		switch (message.Type) {
+			case View_Debug:
+				System.out.println("DEBUG " + message.getInteger().toString() + ": " + message.getString());
+				break;
+			default:
+		}
 	}
 	
 }

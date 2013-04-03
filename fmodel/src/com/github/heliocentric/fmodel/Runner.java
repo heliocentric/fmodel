@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @author helio
  */
 public class Runner {
-	public static void main(String [ ] args)
+	public static void main(String [ ] args) throws Exception
 	{
 		Model model = new Model(new CommandControl(), new CommandView());
 		try {

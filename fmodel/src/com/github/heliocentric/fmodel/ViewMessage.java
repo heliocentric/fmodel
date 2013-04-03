@@ -13,4 +13,8 @@ public class ViewMessage extends Message {
 		View_Null,
 		View_Debug
 	}
+	public Types Type;
+	public String getMessageID() {
+		return "V-" + String.valueOf(this.Type);
+	}
 }
