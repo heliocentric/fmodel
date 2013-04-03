@@ -25,17 +25,27 @@ public class World {
 	private void _Constructor(String Path, String Name) throws Exception {
 		Class.forName("org.h2.Driver");
 		this._Connection = DriverManager.getConnection("jdbc:h2:" + Path + File.separator + Name,"sa","");
-		
+		if (this.GetVersion().toString().equals("0.0.0")) {
+			
+		}
+		this.Upgrade();
 	}
 
 	public void Create() {
-		
+		if (CreateV1_1_0() == true) {
+			
+		}
+	}
+	public boolean CreateV1_1_0() {
+		return true;
 	}
 	public void Upgrade() {
 	
 	}
-	public String GetVersion() {
+	public Version GetVersion() {
+		Version ver = new Version(0,0,0);
 		
+		return ver;
 	}
 	
 	public void Close() throws Exception {
