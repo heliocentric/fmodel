@@ -11,10 +11,15 @@ package com.github.heliocentric.fmodel.ModelClasses;
 public class Version {
 	@Override
 	public String toString() {
-		return "1.0.0";
+		return String.valueOf(Major) + "." + String.valueOf(Minor) + "." + String.valueOf(Revision);
 	}
+	private int Major;
+	private int Minor;
+	private int Revision;
 	public Version(int Major, int Minor, int Revision) {
-		throw new UnsupportedOperationException("Not yet implemented");
+		this.Major = Major;
+		this.Minor = Minor;
+		this.Revision = Revision;
 	}
 	
 }

@@ -4,6 +4,8 @@
  */
 package com.github.heliocentric.fmodel;
 
+import CommandUI.CommandControl;
+import CommandUI.CommandView;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,7 +16,7 @@ import java.util.logging.Logger;
 public class Runner {
 	public static void main(String [ ] args)
 	{
-		Model model = new Model();
+		Model model = new Model(new CommandControl(), new CommandView());
 		try {
 			model.Start();
 		} catch (Exception ex) {

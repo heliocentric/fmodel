@@ -12,8 +12,11 @@ import com.github.heliocentric.fmodel.ModelClasses.World;
  */
 public class Model {
 	public World World;
-	public void Start() throws Exception {
+	public Model(Controller control, View view) throws Exception {
 		this.World = new World("test");
+		
+	}
+	public void Start() throws Exception {
 	}
 	public void Stop() throws Exception {
 		this.World.Close();

@@ -9,6 +9,6 @@ package com.github.heliocentric.fmodel;
  * @author Helio
  */
 public abstract class View {
-
+	public abstract void Enqueue(ViewMessage msg);
 }
 
