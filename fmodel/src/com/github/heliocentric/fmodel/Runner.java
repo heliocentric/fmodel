@@ -4,6 +4,9 @@
  */
 package com.github.heliocentric.fmodel;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author helio
@@ -11,6 +14,11 @@ package com.github.heliocentric.fmodel;
 public class Runner {
 	public static void main(String [ ] args)
 	{
-
+		Model model = new Model();
+		try {
+			model.Start();
+		} catch (Exception ex) {
+			Logger.getLogger(Runner.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	}
 }
