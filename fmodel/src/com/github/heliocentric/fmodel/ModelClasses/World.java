@@ -113,6 +113,39 @@ public class World {
 					this.DebugException(0, ex);
 				}
 			}
+			
+			/*
+			 * Schema 1.1.3 upgrade
+			 * 
+			 */
+			if (this.GetVersion().toString().equals("1.1.2")) {
+				try {
+					
+					stmt = this._Connection.createStatement();
+					query = "CREATE TABLE listEntityType (fldEntityTypeID VARCHAR(36) PRIMARY KEY, fldEntityTypeName VARCHAR(255))";
+					rs = stmt.executeUpdate(query);
+					
+					stmt = this._Connection.createStatement();
+					query = "INSERT INTO listEntityType (fldEntityTypeID,fldEntityTypeName) VALUES('463E0291-35C6-4261-8054-004897FAD77F','Person')";
+					rs = stmt.executeUpdate(query);
+
+					stmt = this._Connection.createStatement();
+					query = "INSERT INTO listEntityType (fldEntityTypeID,fldEntityTypeName) VALUES('3E8FA71F-D827-40B7-826E-88C9B2DAA326','CorporateEntity')";
+					rs = stmt.executeUpdate(query);
+					
+					stmt = this._Connection.createStatement();
+					query = "INSERT INTO listEntityType (fldEntityTypeID,fldEntityTypeName) VALUES('E0B867EB-D9C1-4D1E-997D-5B79A5F5EB14','Nature')";
+					rs = stmt.executeUpdate(query);
+					
+					
+					stmt = this._Connection.createStatement();
+					query = "UPDATE tblConfig SET fldConfigValue = '3' WHERE fldConfigName = 'schema_revision'";
+					rs = stmt.executeUpdate(query);
+					
+				} catch (SQLException ex) {
+					this.DebugException(0, ex);
+				}
+			}
 		}
 	}
 	public Version GetVersion()  {
@@ -122,7 +155,7 @@ public class World {
 		 * Revision is the most common change, and are directly linear, and it will automatically be updated.
 		 * 
 		 * Minor is not automatic. Minor versions implement any change that cannot be safely done in a single transaction,
-		 * and therefore requires a new database file to be created.
+		 * and therefore requires a new database file to be created. This is a restriction of h2, but it makes sense to do a proper rollback.
 		 * 
 		 * Major is a big change that is non-trivial to roll back.
 		 */
