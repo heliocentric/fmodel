@@ -16,6 +16,15 @@ public class Version {
 	private int Major;
 	private int Minor;
 	private int Revision;
+	public int getMajor() {
+		return this.Major;
+	}
+	public int getMinor() {
+		return this.Minor;
+	}
+	public int getRevision() {
+		return this.Revision;
+	}
 	public Version(int Major, int Minor, int Revision) {
 		this.Major = Major;
 		this.Minor = Minor;
